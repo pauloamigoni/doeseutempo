@@ -73,12 +73,22 @@ export default function Incidents(){
                     <Text style={styles.incidentProperty}>CASO:</Text>
                     <Text style={styles.incidentValue}>{incident.title}</Text>
 
-                    <Text style={styles.incidentProperty}>VALOR:</Text>
-                    <Text style={styles.incidentValue}>
-                        {Intl.NumberFormat('pt-BR', {
+                   
+
+                    { !incident.value && incident.value <= 0 
+                    ?  <Text ></Text>
+                    :  <Text style={styles.incidentProperty}>VALOR:</Text>
+                    }
+
+                    { !incident.value && incident.value <= 0 
+                    ?   <Text ></Text>
+                    :   <Text style={styles.incidentValue}>
+                         {Intl.NumberFormat('pt-BR', {
                             style : 'currency',
                             currency: 'BRL'
-                        }).format(incident.value)}</Text>   
+                         }).format(incident.value)}</Text>
+                    }
+                       
 
                     <TouchableOpacity
                      style={styles.detailsButton}
