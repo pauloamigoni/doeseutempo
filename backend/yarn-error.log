@@ -1,0 +1,27 @@
+Arguments: 
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js add express
+
+PATH: 
+  /home/amigoni/flutter/bin:/home/amigoni/.composer/vendor/bin:/home/amigoni/flutter/bin:/home/amigoni/.composer/vendor/bin:/home/amigoni/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.7.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
