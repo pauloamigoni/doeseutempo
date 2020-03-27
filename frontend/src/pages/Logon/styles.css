@@ -7,6 +7,14 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.logon-container img{
+    width: 100%;
+    max-width: 700px;
+
+}
+
+
 .logon-container section.form{
     width: 100%;
     max-width: 350px;
