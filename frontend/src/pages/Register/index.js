@@ -15,7 +15,8 @@ export default function Register(){
       const [email, setEmail] = useState('');
       const [whatsapp, setWhatsapp] = useState('');
       const [city, setCity] = useState('');
-      const [uf, setUf] = useState('');
+      const [uf, setUf] = useState(''); 
+      const [description, setDescription] = useState('');
 
       const history = useHistory();
 
@@ -29,6 +30,7 @@ export default function Register(){
             whatsapp,
             city,
             uf,
+            description,
         };
         try{
       const response  = await api.post('ongs', data);
@@ -66,6 +68,12 @@ export default function Register(){
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 />
+
+                <textarea  
+                placeholder="Descrição" 
+                value={description}
+                onChange={e => setDescription(e.target.value)}
+                /> 
 
                 <input 
                 placeholder="WhatsApp" 
