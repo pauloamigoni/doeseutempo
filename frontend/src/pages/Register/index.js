@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import toaster from 'toasted-notes';
+import 'toasted-notes/src/styles.css'; // optional styles
+
 import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'
 import api from '../../services/api';
+
 
 import  './styles.css';
 
@@ -10,7 +14,7 @@ import logoImg from '../../assets/logo.svg'
 
 export default function Register(){
 
-
+     
       const [name, setName] = useState('');
       const [email, setEmail] = useState('');
       const [whatsapp, setWhatsapp] = useState('');
@@ -34,12 +38,17 @@ export default function Register(){
         };
         try{
       const response  = await api.post('ongs', data);
-            alert(`Seu ID de acesso é : ${response.data.id}`);
+            toaster.notify(`Seu ID de acesso é : ${response.data.id}`);
             history.push('/');
         }catch(err){
-            alert ('Erro no cadastro, tente novamente.');
+          //  alert ('Erro no cadastro, tente novamente.');
+            toaster.notify('Erro no cadastro, tente novamente.')
+          
         }
     }
+
+
+
   
     return (
     <div className="register-container">
@@ -97,6 +106,8 @@ export default function Register(){
 
                 </div>
                 <button className="button" type="submit">Cadastrar</button>
+
+       
             </form>
         </div>
     </div>

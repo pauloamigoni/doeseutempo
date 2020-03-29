@@ -1,4 +1,6 @@
 import React , { useState } from 'react';
+import toaster from 'toasted-notes';
+import 'toasted-notes/src/styles.css'; // optional styles
 import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi'
 import api from '../../services/api';
@@ -23,7 +25,8 @@ export default function Logon(){
               history.push('/profile');
 
         } catch (err) {
-            alert('Falha no Login');
+          
+             toaster.notify('Login Invalido')
         }
         
     }
