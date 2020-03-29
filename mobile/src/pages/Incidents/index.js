@@ -21,6 +21,13 @@ export default function Incidents(){
         navigation.navigate('Detail', {incident});
     }
 
+        function navigateToAbout(incident) {
+            navigation.navigate('About', {
+                incident
+            });
+        }
+
+
     async function loadIncidents(){
         if(loading) {
             return;
@@ -99,6 +106,18 @@ export default function Incidents(){
                             Ver mais detalhes
                         </Text>
                         <Feather name="arrow-right" size={16} color={"#E02041"}/>
+                     </TouchableOpacity>
+
+
+                      <TouchableOpacity
+                     style={[styles.detailsButton, {marginTop: 10}]}
+                     onPress = {() => navigateToAbout(incident)}
+                     >
+                        <Text style={styles.detailsButtonText}
+                        >
+                            Conheça mais da Ong
+                        </Text>
+                        <Feather name="users" size={16} color={"#E02041"}/>
                      </TouchableOpacity>
                 </View>
                 )}
