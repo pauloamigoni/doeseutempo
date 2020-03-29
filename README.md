@@ -1,6 +1,6 @@
 <h3 align="center">
 
-<img src="./web/src/assets/logo.svg" alt="Be The Hero" />
+<img src="./frontend/src/assets/logo.svg" alt="Be The Hero" />
 
 </h3>
 
