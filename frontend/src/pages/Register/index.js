@@ -14,13 +14,34 @@ import logoImg from '../../assets/logo.svg'
 
 export default function Register(){
 
+    console.log('aik');
      
       const [name, setName] = useState('');
       const [email, setEmail] = useState('');
       const [whatsapp, setWhatsapp] = useState('');
-      const [city, setCity] = useState('');
-      const [uf, setUf] = useState(''); 
       const [description, setDescription] = useState('');
+      const [enderecos, setEnderecos] = useState([{ endereco: "", cep: "", cidade: "", complemento: "", numero: "", uf: "" }]);
+
+      // handle input change
+      const handleInputChange = (e, index) => {
+        const { name, value } = e.target;
+        const list = [...enderecos];
+        list[index][name] = value;
+        setEnderecos(list);
+      };
+    
+      // handle click event of the Remove button
+      const handleRemoveClick = index => {
+        const list = [...enderecos];
+        list.splice(index, 1);
+        setEnderecos(list);
+      };
+    
+      // handle click event of the Add button
+      const handleAddClick = () => {
+        setEnderecos([...enderecos, { endereco: "", cep: "", cidade: "", complemento: "", numero: "", uf: "" }]);
+      };
+    
 
       const history = useHistory();
 
@@ -32,12 +53,13 @@ export default function Register(){
             name,
             email,
             whatsapp,
-            city,
-            uf,
             description,
+            enderecos,
         };
+
+       
         try{
-      const response  = await api.post('ongs', data);
+            const response  = await api.post('ongs', data);
             toaster.notify(`Seu ID de acesso é : ${response.data.id}`);
             history.push('/');
         }catch(err){
@@ -64,6 +86,8 @@ export default function Register(){
                  </Link>
 
             </section>
+
+
             <form onSubmit={handleRegister}>
 
                 <input
@@ -90,27 +114,126 @@ export default function Register(){
                 onChange={e => setWhatsapp(e.target.value)
                 }/>
 
-                <div className="input-group">
+
+                <h3 style={{ marginTop: 20, marginLeft: 5}} >Endreço(s)</h3>
+
+
+                { enderecos.map((x, i) => {
+        return (
+          <div className="box">
+
+
+
+            <div className="input-group">
+                    
 
                     <input 
-                    placeholder="Cidade"
-                    value={city}
-                    onChange={e => setCity(e.target.value)} 
+                    placeholder="CEP" style={{ width: 120}} 
+                    name="cep"  
+                    value={x.cep}
+                    onChange={e => handleInputChange(e, i)}
+                   />
+
+
+                    <input 
+                    placeholder="Endereço" 
+                    name="endereco"  
+                    value={x.endereco}
+                    onChange={e => handleInputChange(e, i)}
                     />
 
                     <input 
-                    placeholder="UF" style={{ width: 80}} 
-                    value={uf}
-                    onChange={e => setUf(e.target.value)}
-                   />
+                    placeholder="N"  style={{ width: 80}} 
+                    name="numero"  
+                    value={x.numero}
+                    onChange={e => handleInputChange(e, i)}
+                    />
+
 
                 </div>
-                <button className="button" type="submit">Cadastrar</button>
 
-       
+
+                <div className="input-group">
+
+                    <input 
+                    placeholder="Bairro" 
+                    name="bairro"  
+                    value={x.bairro}
+                    onChange={e => handleInputChange(e, i)}
+                    />
+
+                    <input 
+                    placeholder="Complemento" style={{ width: 140}}
+                    name="complemento"  
+                    value={x.complemento}
+                    onChange={e => handleInputChange(e, i)}
+                    />
+
+
+                    </div>
+
+
+
+                <div className="input-group">
+                    
+
+                    <input 
+                    placeholder="Cidade" 
+                    name="cidade"  
+                    value={x.cidade}
+                    onChange={e => handleInputChange(e, i)}
+                   />
+
+                    <input 
+                    placeholder="UF" style={{ width: 80}}
+                    name="uf"   
+                    value={x.uf}
+                    onChange={e => handleInputChange(e, i)}
+                    />
+                  
+
+
+                </div>
+
+
+
+
+              
+
+                    <div className="btn-box"  >
+                    {enderecos.length !== 1 && 
+                    <button className="buttonEndRem" onClick={() => handleRemoveClick(i)}> REMOVER ENDERECO </button>}
+                    {enderecos.length - 1 === i && <button  className="buttonEndAdd"  onClick={handleAddClick}> ADICIONAR MAIS ENDEREÇO </button>}
+                    </div>
+
+
+               
+              
+
+
+
+          </div>
+        );
+      })}
+
+
+
+    {/* <div style={{ marginTop: 20 }}>{JSON.stringify(enderecos)} - {JSON.stringify(email)}</div> */}
+
+
+
+             <button className="button" type="submit">Cadastrar</button>
+
+
             </form>
         </div>
     </div>
+
+
+      
+
+
+
     )
 
 }
