@@ -19,15 +19,25 @@ export default StyleSheet.create({
         marginBottom: 16,
         marginTop: 48
     },
+
+      incidentEnd: {
+          padding: 1,
+          borderRadius: 8,
+          backgroundColor: '#FFF',
+          marginBottom: 1,
+          marginTop: 1
+      },
+
+
     incidentProperty:{
-        fontSize: 14,
+        fontSize: 17,
         color: '#41414D',
         fontWeight: 'bold',
-        marginTop: 24
+        marginTop: 14
     },
     incidentValue: {
         marginTop: 8,
-        fontSize: 15,
+        fontSize: 14,
         color: '#737380'
     },
     contactBox: {

@@ -6,6 +6,7 @@ const routes = express.Router();
 const OngController = require('./controllers/OngController');
 const IncidentController = require('./controllers/IncidentController');
 const ProfileController = require('./controllers/ProfileController');
+const AboutController = require('./controllers/AboutController');
 const SessionController = require('./controllers/SessionController');
 
 routes.post('/sessions', SessionController.create);
@@ -38,6 +39,17 @@ routes.get('/profile',celebrate({
     authorization: Joi.string().required()
   }).unknown()
 }), ProfileController.index);
+
+
+routes.get('/about', celebrate({
+  [Segments.HEADERS]: Joi.object({
+    authorization: Joi.string().required()
+  }).unknown()
+}), AboutController.index);
+
+
+
+
 
 
 module.exports = routes;
