@@ -36,8 +36,8 @@
 
 .register-container .content form {
     width: 100%;
-    max-width: 450px;
-    height: 100vh;
+    /* max-width: 450px; */
+    /* height: 100vh; */
 }
 
 .register-container .content form input{

@@ -1,0 +1,26 @@
+ERROR in ./src/components/TechList.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/src/components/TechList.js: Support for the experimental syntax 'classProperties' isn't currently enabled (4:9):
+
+  2 | 
+  3 | class TechList extends Component {
+> 4 |   state = {
+    |         ^
+  5 |     techs: [
+  6 |       'NodeJs',
+  7 |       'ReactJs',
+
+Add @babel/plugin-proposal-class-properties (https://git.io/vb4SL) to the 'plugins' section of your Babel config to enable transformation.
+    at Object._raise (/media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/node_modules/@babel/parser/lib/index.js:742:17)
+    at Object.raiseWithData (/media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/node_modules/@babel/parser/lib/index.js:735:17)
+    at Object.expectPlugin (/media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/node_modules/@babel/parser/lib/index.js:8762:18)
+    at Object.parseClassProperty (/media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/node_modules/@babel/parser/lib/index.js:12110:12)
+    at Object.pushClassProperty (/media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/node_modules/@babel/parser/lib/index.js:12070:30)
+    at Object.parseClassMemberWithIsStatic (/media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/node_modules/@babel/parser/lib/index.js:12003:14)
+    at Object.parseClassMember (/media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/node_modules/@babel/parser/lib/index.js:11940:10)
+    at /media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/node_modules/@babel/parser/lib/index.js:11885:14
+    at Object.withTopicForbiddingContext (/media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/node_modules/@babel/parser/lib/index.js:10956:14)
+    at Object.parseClassBody (/media/eduardo/Arquivos Linux/Programação/Curso GoStack/Modulo4/node_modules/@babel/parser/lib/index.js:11862:10)
+ @ ./src/App.js 3:0-45 6:42-50
+ @ ./src/index.js
+ℹ ｢wdm｣: Failed to compile.

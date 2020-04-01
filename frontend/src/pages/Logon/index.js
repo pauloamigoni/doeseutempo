@@ -1,4 +1,5 @@
 import React , { useState } from 'react';
+
 import toaster from 'toasted-notes';
 import 'toasted-notes/src/styles.css'; // optional styles
 import { Link, useHistory } from 'react-router-dom';
@@ -10,6 +11,8 @@ import logoImg from '../../assets/logo.svg'
 import heroesImg from '../../assets/heroes.png'
 
 export default function Logon(){
+
+    let co = api.covid;
 
     const [id, setId] = useState('');
     const history = useHistory();

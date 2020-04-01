@@ -8,8 +8,10 @@ const IncidentController = require('./controllers/IncidentController');
 const ProfileController = require('./controllers/ProfileController');
 const AboutController = require('./controllers/AboutController');
 const SessionController = require('./controllers/SessionController');
+const CovidController = require('./controllers/CovidController');
 
 routes.post('/sessions', SessionController.create);
+routes.get('/covid', CovidController.index);
 
 routes.get('/ongs', OngController.index);
 routes.post('/ongs', celebrate({
