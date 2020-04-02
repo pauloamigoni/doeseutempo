@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {View, Image, Text, TouchableOpacity, Linking } from 'react-native';
+import {View, Image, Text, TouchableOpacity, Linking, ScrollView } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import * as MailComposer from 'expo-mail-composer';
 
@@ -43,7 +43,7 @@ export default function Detail(){
                 </TouchableOpacity>
             </View>
 
-            <View style={styles.incident}>
+            <ScrollView style={styles.incident}>
             <Text style={[styles.incidentProperty, {marginTop: 0}]}>ONG:</Text>
                     <Text style={styles.incidentValue}>{incident.name}</Text>
                     <Text style={[styles.incidentProperty, {marginTop: 10}]}>DESCRIÇÃO DA ONG:</Text>
@@ -77,7 +77,7 @@ export default function Detail(){
 
                    
                   
-            </View>
+            </ScrollView>
 
             <View style={styles.contactBox}>
 
