@@ -13,11 +13,12 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     incident :{
-        padding: 24,
-        borderRadius: 8,
-        backgroundColor: '#FFF',
-        marginBottom: 16,
-        marginTop: 48
+       padding: 14,
+           borderRadius: 8,
+           backgroundColor: '#FFF',
+           marginBottom: 6,
+           marginTop: 18,
+           textAlign: 'justify'
     },
     incidentProperty:{
         fontSize: 14,
@@ -28,7 +29,8 @@ export default StyleSheet.create({
     incidentValue: {
         marginTop: 8,
         fontSize: 15,
-        color: '#737380'
+        color: '#737380',
+        textAlign: "justify"
     },
     contactBox: {
         padding: 24,

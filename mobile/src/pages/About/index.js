@@ -1,6 +1,13 @@
 import React, {useState, useEffect } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { View,  FlatList, Image, Text, TouchableOpacity, Linking } from 'react-native';
+import {
+    View,
+    FlatList,
+    Image,
+    Text,
+    TouchableOpacity,
+    Linking
+} from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import * as MailComposer from 'expo-mail-composer';
 
@@ -64,6 +71,7 @@ export default function About() {
                 <Text style={[styles.incidentProperty, {marginTop: 10}]}>Descrição:</Text>
                 <Text style={styles.incidentValue}>{incident.ongDescription}</Text>
            
+
              <FlatList
                 data={dados}
                 style={styles.incidentList}
